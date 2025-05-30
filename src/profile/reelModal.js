@@ -34,6 +34,7 @@ function ReelModal({ setModal, selectedReel, reels, setReels }) {
         // Get only IDs of movies
         const movieIds = formData.movies.map((movie) => movie._id);
         setFormData({ ...formData, movies: movieIds });
+        // eslint-disable-next-line no-unused-vars
         const response = await reelsClient.updateReel(selectedReel._id, formData);
         console.log(response)
         setModal(false);

@@ -22,9 +22,10 @@ function Reels({movieId}) {
             setReels(response.reels);
         }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         fetchReels();
-    }, [fetchReels]);
+    }, []);
     return (
         <div className={"pt-5"}>
             <div className={"d-flex flex-column rounded wd-bg-light-grey p-3 m-2"}>

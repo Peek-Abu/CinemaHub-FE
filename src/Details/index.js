@@ -42,9 +42,10 @@ function Details() {
         }
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         fetchMovie();
-    }, [review, fetchMovie]);
+    }, [review]);
 
     const saveReview = async () => {
         console.log("Current User: ", JSON.stringify(currentUser));

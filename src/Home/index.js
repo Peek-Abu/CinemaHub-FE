@@ -135,12 +135,13 @@ function Home() {
         },
     ];
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         fetchHighRatings();
         fetchRecentReviews();
         fetchRecentFollowingReviews();
         fetchFollowingHighRatings();
-    }, [fetchHighRatings, fetchRecentReviews, fetchRecentFollowingReviews, fetchFollowingHighRatings]);
+    }, []);
 
     return (
         <div>

@@ -128,10 +128,11 @@ function Profile() {
   // Lookup the users profile image if they have one (optional)
   const image = undefined;
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     fetchReviews();
     fetchReels();
-  }, [newReelModalOpen, fetchReviews, fetchReels]);
+  }, [newReelModalOpen]);
 
   const modalStyle = {
     content: {

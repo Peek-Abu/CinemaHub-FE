@@ -141,6 +141,7 @@ function ProfileSpecific() {
     fetchAccount();
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     // Navigate to profile if the user is viewing their own profile
     if (currentUser.username === id) {
@@ -148,7 +149,7 @@ function ProfileSpecific() {
     }
     fetchAccount();
     fetchReviews();
-  }, [id, following, navigate, currentUser.username, fetchAccount, fetchReviews]);
+  }, [id, following, navigate]);
 
   const handleFollow = async () => {
     following
