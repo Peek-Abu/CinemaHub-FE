@@ -89,7 +89,7 @@ const SearchComponent = () => {
 
   useEffect(() => {
     initializeSearchAndFilters();
-  }, []);
+  }, [initializeSearchAndFilters]);
 
 
   return (

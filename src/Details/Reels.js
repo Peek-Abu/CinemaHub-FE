@@ -24,7 +24,7 @@ function Reels({movieId}) {
     }
     useEffect(() => {
         fetchReels();
-    }, []);
+    }, [fetchReels]);
     return (
         <div className={"pt-5"}>
             <div className={"d-flex flex-column rounded wd-bg-light-grey p-3 m-2"}>

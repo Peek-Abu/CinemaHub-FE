@@ -1,17 +1,11 @@
 import { useState, useEffect } from "react";
-import { setCurrentUser } from "../Login/reducer";
 import * as reelsClient from "../MongoDBClients/reelsClient.js";
-import { useDispatch } from "react-redux";
 import { FaTrash } from "react-icons/fa";
 
 function ReelModal({ setModal, selectedReel, reels, setReels }) {
     const [formData, setFormData] = useState(selectedReel);
 
-    const currentUser = (state) => state.currentUser;
-    const dispatch = useDispatch();
-
-    useEffect(() => {setFormData(selectedReel) }, []); // Empty dependency array ensures this effect runs only once on mount
-
+    useEffect(() => {setFormData(selectedReel) }, [selectedReel]); // Add selectedReel to dependency array
 
     const handleDelete =  (id) => {
         formData.movies = formData.movies.filter((movie) => movie._id !== id);
@@ -23,7 +17,7 @@ function ReelModal({ setModal, selectedReel, reels, setReels }) {
     }
 
     const handleDeleteReel = async () => {
-        const response = await reelsClient.deleteReel(selectedReel._id);
+        await reelsClient.deleteReel(selectedReel._id);
         setModal(false);
     }
 

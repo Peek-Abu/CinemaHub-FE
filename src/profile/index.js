@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./index.css";
-import { FaCheckCircle, FaPlusCircle, FaUserAlt } from "react-icons/fa";
+import { FaPlusCircle, FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import StatModal from "./statModal";
@@ -9,8 +9,6 @@ import * as reviewClient from "../MongoDBClients/reviewsClient.js";
 import { useSelector } from "react-redux";
 import * as reelsClient from "../MongoDBClients/reelsClient.js";
 import ReelModal from "./reelModal";
-import { useDispatch } from "react-redux";
-
 
 function generateReelCard(reel, setSelectedReel, setNewReelModalOpen) {
 
@@ -99,8 +97,6 @@ function Profile() {
   const [reviews, setReviews] = useState([]);
   const [reels, setReels] = useState([]);
 
-  const dispatch = useDispatch();
-
   const fetchReviews = async () => {
     const new_reviews = await reviewClient.findReviewsByUsername(
       currentUser.username,
@@ -135,7 +131,7 @@ function Profile() {
   useEffect(() => {
     fetchReviews();
     fetchReels();
-  }, [newReelModalOpen]);
+  }, [newReelModalOpen, fetchReviews, fetchReels]);
 
   const modalStyle = {
     content: {

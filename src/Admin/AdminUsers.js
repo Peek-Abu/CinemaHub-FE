@@ -1,7 +1,6 @@
 import { FaCheckCircle } from "react-icons/fa";
 import React, { useEffect, useState } from "react";
 import * as usersClient from "../MongoDBClients/usersClient";
-import * as reviewsClient from "../MongoDBClients/reviewsClient";
 import { useSelector } from "react-redux";
 
 function AdminUsers() {

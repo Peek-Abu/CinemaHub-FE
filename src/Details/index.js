@@ -44,7 +44,7 @@ function Details() {
 
     useEffect(() => {
         fetchMovie();
-    }, [review]);
+    }, [review, fetchMovie]);
 
     const saveReview = async () => {
         console.log("Current User: ", JSON.stringify(currentUser));

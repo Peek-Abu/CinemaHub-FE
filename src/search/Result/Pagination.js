@@ -16,25 +16,25 @@ const Pagination = ({ itemsPerPage, totalItems, currentPage, paginate }) => {
     <nav>
       <ul className="pagination">
         <li className="page-item">
-          <a onClick={() => paginate(currentPage - 1)} className="page-link" aria-disabled={currentPage === 1}>
+          <button onClick={() => paginate(currentPage - 1)} className="page-link" disabled={currentPage === 1}>
             Prev
-          </a>
+          </button>
         </li>
         {pageNumbers.map((number, index) => (
           <li key={index} className={`page-item ${number === currentPage ? 'active' : ''}`}>
             {number === '...' ? (
               <span className="page-link">...</span>
             ) : (
-              <a onClick={() => paginate(number)} className="page-link">
+              <button onClick={() => paginate(number)} className="page-link">
                 {number}
-              </a>
+              </button>
             )}
           </li>
         ))}
         <li className="page-item">
-          <a onClick={() => paginate(currentPage + 1)} className="page-link" aria-disabled={currentPage === totalPages}>
+          <button onClick={() => paginate(currentPage + 1)} className="page-link" disabled={currentPage === totalPages}>
             Next
-          </a>
+          </button>
         </li>
       </ul>
     </nav>

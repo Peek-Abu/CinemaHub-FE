@@ -10,7 +10,7 @@ const GridWithPagination = ({ handleSearch, items, type, totalItems }) => {
 
   useEffect(() => {
     handleSearch(currentPage);
-  }, [currentPage]); // Fetch data when currentPage changes
+  }, [currentPage, handleSearch]); // Fetch data when currentPage changes or handleSearch changes
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 

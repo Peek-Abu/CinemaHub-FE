@@ -148,7 +148,7 @@ function ProfileSpecific() {
     }
     fetchAccount();
     fetchReviews();
-  }, [id, following, navigate]);
+  }, [id, following, navigate, currentUser.username, fetchAccount, fetchReviews]);
 
   const handleFollow = async () => {
     following
