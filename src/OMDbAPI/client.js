@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const API_KEY = "9f564754"; //"d35a225d"
-const BASE_API = `https://www.omdbapi.com/?apikey=${API_KEY}&`;
+const BASE_API = `https://www.omdbapi.com/?apikey=${process.env.API_KEY}&`;
 export const BASE_API_ =
   process.env.REACT_APP_API_BASE || "http://localhost:4000/api";
 export const OMBDI_API = `${BASE_API_}/omdb`;
